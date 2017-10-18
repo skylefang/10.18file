@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扑克游戏</title>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/poke.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    html,body{
+        width: 100%;
+        height:100%;
+    }
+    body{
+        overflow: hidden;
+        background: url("img/beijing.jpg") center/cover;
+    }
+    .zhuozi{
+        width: 800px;
+        height: 600px;
+        margin: 0 auto;
+        /*background: #0FA7F7;*/
+        position: relative;
+    }
+    .poke{
+        width:100px;
+        height: 140px;
+        position: absolute;
+        left: 300px;
+        top:0;
+        background-position: center;
+        background-size: cover;
+        /*background-color: #ffffff;*/
+        opacity: 0;
+        border-radius: 5px;
+    }
+    .active{
+        box-shadow: 0 0 0 2px #626262;
+    }
+    .btnR{
+        width: 80px;
+        height: 30px;
+        background: #626262;
+        position: absolute;
+        left: 340px;
+        top:480px;
+        border-radius: 8px;
+        font-size: 18px;
+        color: #ffffff;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .btnR:hover{
+        background: #e8be0c;
+    }
+    .btnL{
+        width: 80px;
+        height: 30px;
+        background: #626262;
+        position: absolute;
+        left: 340px;
+        top:520px;
+        border-radius: 8px;
+        font-size: 18px;
+        color: #ffffff;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .btnL:hover{
+        background: #e8be0c;
+    }
+</style>
+<body>
+<div class="zhuozi">
+    <div class="btnR">&gt;</div>
+    <div class="btnL">&lt;</div>
+</div>
+</body>
+</html>

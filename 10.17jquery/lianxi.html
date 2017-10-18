@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.2.1.js"></script>
+</head>
+<style>
+    *{
+        padding:0;
+        margin: 0;
+        list-style: none;
+    }
+    ul{
+        width:600px;
+        height: 100px;
+        margin: 20px auto;
+    }
+    ul > li{
+        width:100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #e8050c;
+        float: left;
+        margin-right: 10px;
+    }
+    ul > li.hot{
+        background: green;
+    }
+</style>
+<body>
+<ul>
+    <li class="box">li-1</li>
+    <li class="box1">li-2</li>
+    <li class="box2">li-3</li>
+    <li class="box3">li-4</li>
+    <li class="box4">li-5</li>
+</ul>
+<script>
+    $(function(){
+        let lis = $('li');
+        // 1.通过js方式添加事件
+        /*lis.on('mouseenter',function(){
+            $(this).css('background','green');
+        })
+        lis.on('mouseleave',function(){
+            $(this).css('background','#e8050c');
+        })*/
+
+        // 2. 通过添加类名的方式添加事件 类名的层级要高
+        /*lis.on('mouseenter',function(){
+            $(this).addClass('hot');
+        })
+        lis.on('mouseleave',function(){
+            $(this).removeClass('hot');
+        })*/
+
+        // 3.通过toggle添加事件
+        /*lis.on('mouseenter mouseleave',function(){
+            $(this).toggleClass('hot');
+        })*/
+
+        // 4.将内容作为类名进行遍历，可传函数 接收两个参数 index表示下标，value表示遍历谁就是谁的值
+        /*lis.addClass(function(index,value){
+            // js原生的方法
+           /!* return this.innerText;*!/
+           // jquery 方法
+            return $(this).text();
+
+        })
+*/
+        // 5.html 用来设置内容，如果原来有内容，会改掉，写成以下的形式就是进行了添加，可识别标签对
+        /*lis.html(function(index,value){
+            return value+=`<b>这是第${index}个b标签</b>`
+
+        })*/
+
+        // 6.css()  设置元素的样式，不需加单位 属性多的话用json的样式书写css({})可以传函数
+        // 接收两个参数，index和value分别表示对应的样式集合中的下标和值从0开始，value返回的
+        // 值始终为没有修改之前的值，即写css样式时设定的值，css()传函数之后，后面可以继续跟
+        // 着写其他样式，value写在谁后面，得到的就是谁的值
+        /*lis.css({width:function(index,value){
+            return index*50;
+            console.log(index,value);
+        },height:300,background:'green'});*/
+
+        // 7.offset()
+    })
+</script>
+</body>
+</html>
